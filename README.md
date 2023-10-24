@@ -1,0 +1,2 @@
+# hark-shell-script
+シェルスクリプトでHARKのインストールをする。
