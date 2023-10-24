@@ -39,7 +39,7 @@ optsList=("?" "?" "?" "denable=OFF" "py" "denable=OFF" "?" "?")
 for ((i=0; i<"${#harkList[@]}"; i++)); do
     if [ ${optsList[i]} = "py" ] ; then
         installFunc -py ${harkList[i]}
-    elif [ ${ $optsList[i] grep -o "denable"}"" = "denable" ] ; then
+    elif [ ${ grep -o "denable" $optsList[i]}"" = "denable" ] ; then
         installFunc -denable [${optsList[i]}##*=] ${harkList[i]}
     else
         installFunc ${harkList[i]}
