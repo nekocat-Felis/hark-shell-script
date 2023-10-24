@@ -14,7 +14,7 @@ function installFunc () {
     [ $(cat $name".c")//"#include <sys/io.h>"//"/* #include <sys/io.h> */" ] > $name".c"
     mkdir build
     cd build
-    if [$denable = "?"] ; then
+    if [ $denable = "?" ] ; then
         cmake ..
     else
         cmake -DENABLE_RASP24=$denBool -DENABLE_WS=$denBool ..
