@@ -36,7 +36,7 @@ harkList=("hark-base" "libhark-netapi" "libharkio3" "hark-core" "harkmw" "hark-l
 optsList=("?" "?" "?" "denable=OFF" "py" "denable=OFF" "?" "?")
 
 for ((i=0; i<"${#harkList[@]}"; i++)); do
-    if [${optsList[i]} = "py"] ; then
+    if [ ${optsList[i]} = "py" ] ; then
         installFunc -py ${harkList[i]}
     elif [ $(grep -o "denable" ${optsList[i]})"" = "denable"] ; then
         installFunc -denable [${optsList[i]}##*=] ${harkList[i]}
