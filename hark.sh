@@ -11,7 +11,7 @@ function installFunc () {
         sudo python3 setup.py install
         return 0
     fi
-    ${ $(cat $name".c")//"#include <sys/io.h>"//"/\* #include <sys/io.h> \*/"} > $name".c"
+    ${ $(cat $name".c")//"#include <sys/io.h>"//"/* #include <sys/io.h> */"} > $name".c"
     mkdir build
     cd build
     if [$denable = "?"] ; then
