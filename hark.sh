@@ -4,7 +4,7 @@ function installFunc () {
     getopts "py" pyBool
     cd ${HOME}/hark
     apt source ${name}
-    cd $(ls | grep -o $(name)"-*.*.*")
+    cd $(ls | grep -o $name"-*.*.*")
     if [$py = "py"] ; then
         python3 setup.py build
         sudo python3 setup.py install
@@ -26,7 +26,6 @@ function installFunc () {
 cd ${HOME}
 if [ -d "hark" ] ; then
     echo "エラー：harkディレクトリが存在しています。"
-    return 0
 else
     echo "harkディレクトリがないことを確認しました。"
     mkdir hark
