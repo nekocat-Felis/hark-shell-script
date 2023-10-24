@@ -4,6 +4,7 @@ function installFunc () {
     getopts "py" pyBool
     cd ${HOME}/hark
     apt source $name
+    echo $( ls | grep -o $name"-.*" )
     cd $( ls | grep -o $name"-.*" )
     if [ $py = "py" ] ; then
         python3 setup.py build
