@@ -1,11 +1,18 @@
 function installFunc () {
+    # ファイル名とオプション
     name=$1
     getopts "denable:" denBool
     getopts "py" pyBool
+
+    # home/hark 上で作業する
     cd ${HOME}/hark
+
+    # コードのダウンロードと作業ディレクトリへの移動
     apt source $name
     echo $( ls | grep -o $name"-.*" )
     cd $( ls | grep -o $name"-.*" )
+    
+    # ビルドとインストール
     if [ $py"" = "py" ] ; then
         python3 setup.py build
         sudo python3 setup.py install
@@ -24,6 +31,7 @@ function installFunc () {
 }
 
 
+# home 上に harkディレクトリ が既に存在するか確認
 cd ${HOME}
 if [ -d "hark" ] ; then
     echo "警告:harkディレクトリが存在しています。"
@@ -32,7 +40,8 @@ else
     mkdir hark
 fi
 
-#sudo apt install libtool cmake libxml2-dev libzip-dev libasound2-dev libopenblas-dev libgtk2.0-dev libsndfile1-dev libsdl2-dev liblapacke-dev gfortran python3-setuptools python3-dev libpopt-dev python3-daemon python3-paho-mqtt libmosquittopp-dev python3-pkgconfig python3-pybind11
+# apt でインストールできるものを入れ、それ以外のリストを作成
+sudo apt install libtool cmake libxml2-dev libzip-dev libasound2-dev libopenblas-dev libgtk2.0-dev libsndfile1-dev libsdl2-dev liblapacke-dev gfortran python3-setuptools python3-dev libpopt-dev python3-daemon python3-paho-mqtt libmosquittopp-dev python3-pkgconfig python3-pybind11
 harkList=("hark-base" "libhark-netapi" "libharkio3" "hark-core" "harkmw" "hark-linux" "hark-gtkplot" "harktool5")
 optsList=("?" "?" "?" "denable=OFF" "py" "denable=OFF" "?" "?")
 
