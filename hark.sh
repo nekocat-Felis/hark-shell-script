@@ -3,8 +3,8 @@ function installFunc () {
     getopts "denable:" denBool
     getopts "py" pyBool
     cd ${HOME}/hark
-    apt source ${name}
-    cd $( ls | grep -o $name"-*.*.*" )
+    apt source $name
+    cd $( ls | grep -o ${name}"-*.*.*" )
     if [ $py = "py" ] ; then
         python3 setup.py build
         sudo python3 setup.py install
