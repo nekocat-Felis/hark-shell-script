@@ -13,7 +13,7 @@ function installFunc () {
     cd $( ls | grep -o $name"-.*" )
     
     # ビルドとインストール
-    if [ $py"" = "py" ] ; then
+    if [ $pyBool"" = "py" ] ; then
         python3 setup.py build
         sudo python3 setup.py install
         return 0
@@ -23,10 +23,10 @@ function installFunc () {
     fi
     mkdir build
     cd build
-    if [ $denable"" = "" ] ; then
-        cmake ..
-    else
+    if [ $denBool"" = "" ] ; then
         cmake -DENABLE_RASP24=$denBool -DENABLE_WS=$denBool ..
+    else
+        cmake ..
     fi
     make
     #sudo make install
