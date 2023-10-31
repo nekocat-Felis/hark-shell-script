@@ -30,7 +30,7 @@ function installFunc () {
         cmake ..
     fi
     make
-    #sudo make install
+    sudo make install
 }
 
 
