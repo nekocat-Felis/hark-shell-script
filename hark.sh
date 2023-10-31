@@ -29,7 +29,7 @@ function installFunc () {
         cmake -DENABLE_RASP24=$denBool -DENABLE_WS=$denBool ..
     fi
     make
-    #sudo make install
+    sudo make install
 }
 
 
@@ -51,10 +51,10 @@ optsList=("" "" "" "denable=OFF" "py" "denable=OFF" "" "")
 
 for ((i=0; i<"${#harkList[@]}"; i++)); do
     if [ ${optsList[i]} = "py" ] ; then
-        installFunc -py ${harkList[i]}
+        installFunc ${harkList[i]} -py
     elif [ ${optsList[i]}"" = "denable.*" ] ; then
         echo [${optsList[i]}##*=]
-        installFunc -denable [${optsList[i]}##*=] ${harkList[i]}
+        installFunc ${harkList[i]} -denable [${optsList[i]}##*=]
     else
         installFunc ${harkList[i]}
     fi
