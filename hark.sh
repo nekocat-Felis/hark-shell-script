@@ -18,7 +18,9 @@ function installFunc () {
         sudo python3 setup.py install
         return 0
     fi
-    [ $(cat $name".c")//"#include <sys/io.h>"//"/* #include <sys/io.h> */" ] > $name".c"
+    if [ $name"" = "libhark-netapi" ] ; then
+        [ $(cat $name".c")//"#include <sys/io.h>"//"/* #include <sys/io.h> */" ] > $name".c"
+    fi
     mkdir build
     cd build
     if [ $denable"" = "?" ] ; then
