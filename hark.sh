@@ -29,7 +29,7 @@ function installFunc () {
         cmake -DENABLE_RASP24=$denBool -DENABLE_WS=$denBool ..
     fi
     make
-    sudo make install
+    #sudo make install
 }
 
 
