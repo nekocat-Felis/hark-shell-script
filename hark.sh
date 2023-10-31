@@ -20,7 +20,7 @@ function installFunc () {
     fi
     if [ $name"" = "libhark-netapi" ] ; then
         echo neko
-        cat $name".c" | sed s/"#include <sys/io.h>"//"* #include <sys/io.h> */"/ | tee $name".c"
+        cat $name".c" | sed s/"#include <sys/io.h>"/"/* #include <sys/io.h> */"/ | tee $name".c"
     fi
     mkdir build
     cd build
