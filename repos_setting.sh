@@ -1,7 +1,7 @@
 cd ${HOME}
 sudo apt update && sudo apt install curl
 sudo curl -sSL http://archive.hark.jp/harkrepos/public.gpg -o /usr/share/keyrings/hark-archive-keyring.asc
-if [ $(lsb_release -cs) = "bullseye"] ; then
+if [ $(lsb_release -cs) = "bullseye" ] ; then
     sudo bash -c 'echo -e "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/hark-archive-keyring.asc] http://archive.hark.jp/harkrepos focal non-free\ndeb-src [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/hark-archive-keyring.asc] http://archive.hark.jp/harkrepos focal non-free" > /etc/apt/sources.list.d/hark.list'
     echo "成功"
     return 0
