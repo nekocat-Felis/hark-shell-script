@@ -19,7 +19,7 @@ function installFunc () {
         return 0
     fi
     if [ $name"" = "libhark-netapi" ] ; then
-        [ $(cat $name".c")//"#include <sys/io.h>"//"/* #include <sys/io.h> */" ] > $name".c"
+        cat $name".c" | sed s/"#include <sys/io.h>"//"* #include <sys/io.h> */"/ | tee $name".c"
     fi
     mkdir build
     cd build
@@ -41,8 +41,7 @@ else
     echo "harkディレクトリがないことを確認しました。"
     mkdir hark
 fi
-[ $(cat "/etc/apt/sources.list")//"#deb-src"//"deb-src" ] | sudo tee "/etc/apt/sources.list"
-[ $(cat "/etc/apt/sources.list")//"# deb-src"//"deb-src" ] | sudo tee "/etc/apt/sources.list"
+cat /etc/apt/sources.list | sed s/"# deb-src"/deb-src/ | sed s/"#deb-src"/deb-src/ | sudo tee "/etc/apt/sources.list"
 
 # apt でインストールできるものを入れ、それ以外のリストを作成
 sudo apt install libtool cmake libxml2-dev libzip-dev libasound2-dev libopenblas-dev libgtk2.0-dev libsndfile1-dev libsdl2-dev liblapacke-dev gfortran python3-setuptools python3-dev libpopt-dev python3-daemon python3-paho-mqtt libmosquittopp-dev python3-pkgconfig python3-pybind11 -y
