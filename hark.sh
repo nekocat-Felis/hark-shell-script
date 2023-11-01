@@ -30,7 +30,7 @@ function installFunc () {
         cmake ..
     fi
     make
-    sudo make install
+    #sudo make install
 }
 
 
@@ -59,4 +59,3 @@ for ((i=0; i<"${#harkList[@]}"; i++)); do
         installFunc ${harkList[i]}
     fi
 done
-
