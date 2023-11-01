@@ -11,7 +11,7 @@ function installFunc () {
     cd ${HOME}/hark
 
     # コードのダウンロードと作業ディレクトリへの移動
-    apt source $name
+    #apt source $name
     echo $( ls | grep -o $name"-.*" )
     cd $( ls | grep -o $name"-.*" )
     
@@ -24,7 +24,7 @@ function installFunc () {
     fi
     if [ $name"" = "libhark-netapi" ] ; then
         echo api
-        sed 's/#include <sys\/io\.h>/\/\* #include <sys\/io\.h> \*\//g' hark-netapi.c
+        #sed 's/#include <sys\/io\.h>/\/\* #include <sys\/io\.h> \*\//g' hark-netapi.c
     fi
     mkdir build
     cd build
