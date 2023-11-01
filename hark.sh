@@ -1,5 +1,3 @@
-@echo off
-
 function installFunc () {
     # ファイル名とオプション
     name=$1
