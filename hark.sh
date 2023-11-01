@@ -6,7 +6,7 @@ function installFunc () {
     do
     case $option in
         d)
-        denBool=${OPTARG};;
+        denBool=$OPTARG;;
         p)
         pyBool="py";;
         \?)
