@@ -4,8 +4,8 @@ function installFunc () {
     getopts "denable:" denBool
     getopts "py" pyBool
 
-    echo $denBool
-    echo $pyBool
+    echo "denBool:"$denBool
+    echo "pyBool:"$pyBool
 
     # home/hark 上で作業する
     cd ${HOME}/hark
