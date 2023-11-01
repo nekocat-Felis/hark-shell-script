@@ -11,7 +11,7 @@ function installFunc () {
     cd ${HOME}/hark
 
     # コードのダウンロードと作業ディレクトリへの移動
-    #apt source $name
+    apt source $name
     echo $( ls | grep -o $name"-.*" )
     cd $( ls | grep -o $name"-.*" )
     
