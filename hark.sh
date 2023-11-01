@@ -11,7 +11,7 @@ function installFunc () {
     cd ${HOME}/hark
 
     # コードのダウンロードと作業ディレクトリへの移動
-    #apt source $name
+    apt source $name
     echo $( ls | grep -o $name"-.*" )
     cd $( ls | grep -o $name"-.*" )
     
@@ -26,7 +26,7 @@ function installFunc () {
         echo api
         sed 's/#include <sys\/io\.h>/\/\* #include <sys\/io\.h> \*\//g' hark-netapi.c > hark-netapi.c
     fi
-    #mkdir build
+    mkdir build
     cd build
     if [ $denBool"" = "?" ] ; then
         echo "?"
