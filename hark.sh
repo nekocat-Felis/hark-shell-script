@@ -26,7 +26,7 @@ function installFunc () {
         echo api
         sed 's/#include <sys\/io\.h>/\/\* #include <sys\/io\.h> \*\//g' hark-netapi.c
     fi
-    #mkdir build
+    mkdir build
     cd build
     if [ $denBool"" = "?" ] ; then
         echo "?"
