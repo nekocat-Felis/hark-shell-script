@@ -62,7 +62,6 @@ for ((i=0; i<"${#harkList[@]}"; i++)); do
     elif [[ "${optsList[i]}" =~ "denable" ]] ; then
         installFunc ${harkList[i]} -d ${optsList[i]##*=}
     else
-        echo else
         installFunc ${harkList[i]}
     fi
 done
