@@ -1,8 +1,8 @@
 function installFunc () {
     # ファイル名とオプション
     name=$1
-    getopts "d:" denBool
-    getopts "p" pyBool
+    getopts "denable:" denBool
+    getopts "py" pyBool
 
     echo "denBool:"$denBool
     echo "pyBool:"$pyBool
@@ -59,9 +59,9 @@ for ((i=0; i<"${#harkList[@]}"; i++)); do
     echo ""
     echo "option:"${optsList[i]}
     if [ ${optsList[i]}"" = "py" ] ; then
-        installFunc ${harkList[i]} -p
+        installFunc -py ${harkList[i]}
     elif [[ "${optsList[i]}" =~ "denable" ]] ; then
-        installFunc ${harkList[i]} -d ${optsList[i]##*=}
+        installFunc -denable ${optsList[i]##*=} ${harkList[i]}
     else
         echo else
         installFunc ${harkList[i]}
