@@ -1,8 +1,19 @@
 function installFunc () {
     # ファイル名とオプション
     name=$1
-    getopts "denable:" denBool
-    getopts "py" pyBool
+
+    while getopts pd: option
+    do
+    case $option in
+        d)
+        denBool=${OPTARG}
+        p)
+        pyBool="true"
+        \?)
+        echo "This is unexpected option." 1>&2
+        exit 1
+    esac
+    done
 
     echo "name:"$name
     echo "denBool:"$denBool
