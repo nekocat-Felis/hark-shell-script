@@ -24,7 +24,7 @@ function installFunc () {
     fi
     if [ $name"" = "libhark-netapi" ] ; then
         echo api
-        sed s/'#include <sys/io.h>'/'/* #include <sys/io.h> */'/ hark-netapi.c
+        sed 's/#include <sys\/io\.h>/\/\* #include <sys\/io\.h> \*\//g' hark-netapi.c
     fi
     #mkdir build
     cd build
