@@ -40,7 +40,7 @@ function installFunc () {
     fi
     #mkdir build
     cd build
-    if [ $denBool"" = "?" ] ; then
+    if [ $denBool"" = "" ] ; then
         echo "?"
         #cmake ..
     else
