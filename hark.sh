@@ -1,3 +1,5 @@
+@echo off
+
 function installFunc () {
     # ファイル名とオプション
     name=$1
@@ -14,18 +16,19 @@ function installFunc () {
     
     # ビルドとインストール
     if [ $pyBool"" = "py" ] ; then
-        python3 setup.py build
-        sudo python3 setup.py install
+        echo py
+        #python3 setup.py build
+        #sudo python3 setup.py install
         return 0
     fi
     if [ $name"" = "libhark-netapi" ] ; then
-        echo neko
+        echo api
         sed s/"#include <sys/io.h>"/"/* #include <sys/io.h> */"/ hark-netapi.c
     fi
     mkdir build
     cd build
     if [ $denBool"" = "?" ] ; then
-        echo unti
+        echo "?"
         #cmake ..
     else
         echo $denBool
