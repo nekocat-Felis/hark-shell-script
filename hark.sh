@@ -25,13 +25,13 @@ function installFunc () {
     mkdir build
     cd build
     if [ $denBool"" != "" ] ; then
-        echo "neko"
-        cmake ..
+        echo $denBool
+        #cmake ..
     else
         echo "cat"
-        cmake -DENABLE_RASP24=$denBool -DENABLE_WS=$denBool ..
+        #cmake -DENABLE_RASP24=$denBool -DENABLE_WS=$denBool ..
     fi
-    make
+    #make
     #sudo make install
 }
 
