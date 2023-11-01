@@ -5,7 +5,7 @@ function installFunc () {
     while getopts pd: option
     do
     case $option in
-        d)
+        d:)
         denBool=${OPTARG};;
         p)
         pyBool="py";;
