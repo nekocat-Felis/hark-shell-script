@@ -2,7 +2,7 @@ function installFunc () {
     # ファイル名とオプション
     name=$1
 
-    while getopts pd: option
+    while getopts "pd:" option
     do
     case $option in
         d)
