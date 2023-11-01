@@ -4,6 +4,7 @@ function installFunc () {
     getopts "denable:" denBool
     getopts "py" pyBool
 
+    echo "name:"$name
     echo "denBool:"$denBool
     echo "pyBool:"$pyBool
 
