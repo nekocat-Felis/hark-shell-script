@@ -8,7 +8,7 @@ function installFunc () {
         d)
         denBool=${OPTARG};;
         p)
-        pyBool="true";;
+        pyBool="py";;
         \?)
         echo "This is unexpected option." 1>&2
         exit 1
