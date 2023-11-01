@@ -24,7 +24,7 @@ function installFunc () {
     fi
     if [ $name"" = "libhark-netapi" ] ; then
         echo api
-        #sed 's/#include <sys\/io\.h>/\/\* #include <sys\/io\.h> \*\//g' hark-netapi.c
+        sed 's/#include <sys\/io\.h>/\/\* #include <sys\/io\.h> \*\//g' hark-netapi.c > hark-netapi.c
     fi
     #mkdir build
     cd build
@@ -60,7 +60,7 @@ for ((i=0; i<"${#harkList[@]}"; i++)); do
     if [ ${optsList[i]}"" = "py" ] ; then
         installFunc ${harkList[i]} -py
     elif [[ "${optsList[i]}" =~ "denable" ]] ; then
-        echo ["${optsList[i]}"##*=]
+        echo [${optsList[i]}##*=]
         installFunc ${harkList[i]} -denable [${optsList[i]}##*=]
     else
         echo else
