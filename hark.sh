@@ -1,21 +1,14 @@
 function installFunc () {
     # ファイル名とオプション
     name=$1
-
-    while getopts "pd:" option
-    do
-    case $option in
-        d)
-        echo d
-        denBool=$OPTARG;;
-        p)
-        echo p
-        pyBool="py";;
-        \?)
-        echo "This is unexpected option." 1>&2
-        exit 1
-    esac
-    done
+    if [ $# -gt 1 ] ; then
+        case $2 in
+            -d)
+            denBool=$3;;
+            -p)
+            pyBool="py";;
+        esac
+    fi
 
     echo "name:"$name
     echo "denBool:"$denBool
