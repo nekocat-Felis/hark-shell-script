@@ -60,9 +60,9 @@ for ((i=0; i<"${#harkList[@]}"; i++)); do
     echo ""
     echo "option:"${optsList[i]}
     if [ ${optsList[i]}"" = "py" ] ; then
-        installFunc -py ${harkList[i]}
+        installFunc ${harkList[i]} -py
     elif [[ "${optsList[i]}" =~ "denable" ]] ; then
-        installFunc -denable ${optsList[i]##*=} ${harkList[i]}
+        installFunc ${harkList[i]} -denable ${optsList[i]##*=}
     else
         echo else
         installFunc ${harkList[i]}
