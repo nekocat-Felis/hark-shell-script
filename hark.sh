@@ -24,11 +24,11 @@ function installFunc () {
     fi
     mkdir build
     cd build
-    if [ $denBool"" != "" ] ; then
-        echo $denBool
+    if [ $denBool"" = "?" ] ; then
+        echo unti
         #cmake ..
     else
-        echo "cat"
+        echo $denBool
         #cmake -DENABLE_RASP24=$denBool -DENABLE_WS=$denBool ..
     fi
     #make
