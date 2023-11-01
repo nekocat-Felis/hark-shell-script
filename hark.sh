@@ -44,7 +44,7 @@ function installFunc () {
         echo "?"
         #cmake ..
     else
-        echo $denBool
+        echo denelse
         #cmake -DENABLE_RASP24=$denBool -DENABLE_WS=$denBool ..
     fi
     #make
