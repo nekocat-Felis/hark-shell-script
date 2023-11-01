@@ -6,8 +6,10 @@ function installFunc () {
     do
     case $option in
         d)
+        echo d
         denBool=$OPTARG;;
         p)
+        echo p
         pyBool="py";;
         \?)
         echo "This is unexpected option." 1>&2
