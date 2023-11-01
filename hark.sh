@@ -1,6 +1,8 @@
 function installFunc () {
     # ファイル名とオプション
     name=$1
+    denBool=""
+    pyBool=""
     if [ $# -gt 1 ] ; then
         case $2 in
             -d)
