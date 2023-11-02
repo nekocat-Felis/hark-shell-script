@@ -10,3 +10,4 @@ else
     echo "書き込み完了"
 fi
 
+sudo reboot
