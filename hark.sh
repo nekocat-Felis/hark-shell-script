@@ -68,5 +68,3 @@ for ((i=0; i<"${#harkList[@]}"; i++)); do
         installFunc ${harkList[i]}
     fi
 done
-
-pip3 install hark
