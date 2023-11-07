@@ -50,11 +50,15 @@ else
     mkdir hark
 fi
 cat /etc/apt/sources.list | sed s/"# deb-src"/deb-src/ | sed s/"#deb-src"/deb-src/ | sudo tee /etc/apt/sources.list
+sudo apt update
 
-# apt でインストールできるものを入れ、それ以外のリストを作成
+# apt install と pip3 でインストールできるものを入れ、それ以外のリストを作成
 sudo apt install libtool cmake libxml2-dev libzip-dev libasound2-dev libopenblas-dev libgtk2.0-dev libsndfile1-dev libsdl2-dev liblapacke-dev gfortran python3-dev libpopt-dev libmosquittopp-dev -y
 pip3 install --upgrade pip numpy
 pip3 install setuptools pybind11 pkgconfig paho-mqtt python-daemon soundfile
+sudo apt install libhark-lib python3-hark-lib -y
+python3 -m pip install https://github.com/kivy-garden/graph/archive/master.zip
+
 harkList=("hark-base" "libhark-netapi" "libharkio3" "hark-core" "harkmw" "hark-linux" "hark-gtkplot" "harktool5")
 optsList=("" "" "" "denable=OFF" "py" "denable=OFF" "" "")
 
