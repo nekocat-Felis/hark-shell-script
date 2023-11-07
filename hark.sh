@@ -51,6 +51,8 @@ else
 fi
 cat /etc/apt/sources.list | sed s/"# deb-src"/deb-src/ | sed s/"#deb-src"/deb-src/ | sudo tee /etc/apt/sources.list
 sudo apt update
+curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+sudo apt install nodejs -y
 
 # apt install と pip3 でインストールできるものを入れ、それ以外のリストを作成
 sudo apt install libtool cmake libxml2-dev libzip-dev libasound2-dev libopenblas-dev libgtk2.0-dev libsndfile1-dev libsdl2-dev liblapacke-dev gfortran python3-dev libpopt-dev libmosquittopp-dev -y
