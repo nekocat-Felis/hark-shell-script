@@ -10,4 +10,5 @@ else
     echo "書き込み完了"
 fi
 
+echo 再起動します。
 sudo reboot
