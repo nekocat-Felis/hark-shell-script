@@ -15,7 +15,7 @@ pip3 install --upgrade pip numpy setuptools pybind11 pkgconfig
 
 cd hark
 
-wget http://archive.hark.jp/harkrepos/dists/focal/non-free/source/libhark-lib_1.0.0.tar.xz
+wget https://hark.jp/networks/hark-lib-1.0.0-20221215.tar.xz
 tar -Jxvf libhark-lib_1.0.0.tar.xz
 
 cd hark-lib
