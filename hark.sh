@@ -61,13 +61,13 @@ pip3 install pybind11 pkgconfig paho-mqtt python-daemon soundfile
 harkList=("hark-base" "libhark-netapi" "libharkio3" "hark-core" "harkmw" "hark-linux" "hark-gtkplot" "harktool5")
 optsList=("" "" "" "denable=OFF" "py" "denable=OFF" "" "")
 
-#for ((i=0; i<"${#harkList[@]}"; i++)); do
-#    if [ ${optsList[i]}"" = "py" ] ; then
-#        installFunc ${harkList[i]} -p
-#    elif [[ "${optsList[i]}" =~ "denable" ]] ; then
-#        installFunc ${harkList[i]} -d ${optsList[i]##*=}
-#    else
-#        echo else
-#        installFunc ${harkList[i]}
-#    fi
-#done
+for ((i=0; i<"${#harkList[@]}"; i++)); do
+    if [ ${optsList[i]}"" = "py" ] ; then
+        installFunc ${harkList[i]} -p
+    elif [[ "${optsList[i]}" =~ "denable" ]] ; then
+        installFunc ${harkList[i]} -d ${optsList[i]##*=}
+    else
+        echo else
+        installFunc ${harkList[i]}
+    fi
+done
