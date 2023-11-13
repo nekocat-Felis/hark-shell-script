@@ -53,7 +53,7 @@ cat /etc/apt/sources.list | sed s/"# deb-src"/deb-src/ | sed s/"#deb-src"/deb-sr
 sudo apt update
 
 # apt install と pip3 でインストールできるものを入れ、それ以外のリストを作成
-sudo apt install libtool cmake cmake-extras build-essential libopenblas-base libopenblas-dev gfortran liblapack-dev liblapacke-dev libeigen3-dev pybind11-dev python3-dev python3-pybind11 python3-setuptools python3-pkgconfig python3-pip python3-numpy python3-scipy python3-matplotlib python3-kivy libfmt-dev zlib1g-dev libharkio3
+sudo apt install libtool cmake cmake-extras build-essential libopenblas-base libopenblas-dev gfortran liblapack-dev liblapacke-dev libeigen3-dev pybind11-dev python3-dev python3-pybind11 python3-setuptools python3-pkgconfig python3-pip python3-numpy python3-scipy python3-matplotlib python3-kivy libfmt-dev zlib1g-dev
 pip3 install --upgrade pip numpy setuptools pybind11 pkgconfig
 pip3 install soundfile
 
