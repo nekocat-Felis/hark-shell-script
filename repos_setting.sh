@@ -10,5 +10,6 @@ else
     echo "書き込み完了"
 fi
 
-echo 再起動してください。
+echo 再起動します。
 sudo reboot
+echo 自動再起動に失敗しました。再起動してください。
