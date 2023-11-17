@@ -1,7 +1,7 @@
 cd ${HOME}
 apt update -y && apt install curl lsb-release -y
 curl -sSL http://archive.hark.jp/harkrepos/public.gpg -o /usr/share/keyrings/hark-archive-keyring.asc
-if [ $(lsb_release -i) = "Ubuntu" -o $(lsb_release -cs) = "bullseye" ] ; then
+if [ $(lsb_release -i) =~ "Ubuntu" -o $(lsb_release -cs) = "bullseye" ] ; then
     bash -c 'echo -e "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/hark-archive-keyring.asc] http://archive.hark.jp/harkrepos focal non-free\ndeb-src [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/hark-archive-keyring.asc] http://archive.hark.jp/harkrepos focal non-free" > /etc/apt/sources.list.d/hark.list'
     echo "成功"
 else
@@ -10,4 +10,4 @@ else
     echo "書き込み完了"
 fi
 
-echo 再起動てください。
+echo 再起動してください。
