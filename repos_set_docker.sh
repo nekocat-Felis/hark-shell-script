@@ -5,7 +5,7 @@ curl -sSL http://archive.hark.jp/harkrepos/public.gpg -o /usr/share/keyrings/har
 
 codename=$(lsb_release -cs)
 
-if [ $(lsb_release -i) = "Ubuntu" ] ; then
+if [ "$(lsb_release -i | awk '{print $3}')" = "Ubuntu" ] ; then
     bash -c 'echo -e "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/hark-archive-keyring.asc] http://archive.hark.jp/harkrepos codename non-free\ndeb-src [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/hark-archive-keyring.asc] http://archive.hark.jp/harkrepos codename non-free" > /etc/apt/sources.list.d/hark.list'
     echo "成功"
 elif [ codename = "bullseye" ] ; then
