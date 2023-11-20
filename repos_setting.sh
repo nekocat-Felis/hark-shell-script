@@ -6,7 +6,7 @@ sudo curl -sSL http://archive.hark.jp/harkrepos/public.gpg -o /usr/share/keyring
 if [ "$(lsb_release -i | awk '{print $3}')" = "Ubuntu" ] ; then
     sudo bash -c 'echo -e "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/hark-archive-keyring.asc] http://archive.hark.jp/harkrepos $(lsb_release -cs) non-free\ndeb-src [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/hark-archive-keyring.asc] http://archive.hark.jp/harkrepos $(lsb_release -cs) non-free" > /etc/apt/sources.list.d/hark.list'
     echo "成功"
-if [ $(lsb_release -cs) = "bullseye" ] ; then
+elif [ $(lsb_release -cs) = "bullseye" ] ; then
     sudo bash -c 'echo -e "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/hark-archive-keyring.asc] http://archive.hark.jp/harkrepos focal non-free\ndeb-src [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/hark-archive-keyring.asc] http://archive.hark.jp/harkrepos focal non-free" > /etc/apt/sources.list.d/hark.list'
     echo "成功"
 else
