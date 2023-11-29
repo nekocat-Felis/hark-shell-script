@@ -53,10 +53,10 @@ cat /etc/apt/sources.list | sed s/"# deb-src"/deb-src/ | sed s/"#deb-src"/deb-sr
 apt update
 
 # apt install と pip3 でインストールできるものを入れ、それ以外のリストを作成
-apt install libtool cmake libxml2-dev libzip-dev libasound2-dev libopenblas-dev libgtk2.0-dev libsndfile1-dev libsdl2-dev liblapacke-dev gfortran python3-setuptools python3-dev libpopt-dev -y
-pip3 install --upgrade pip numpy setuptools
+apt install libtool cmake libxml2-dev libzip-dev libasound2-dev libopenblas-dev libgtk2.0-dev libsndfile1-dev libsdl2-dev liblapacke-dev gfortran python3-setuptools python3-dev libpopt-dev python3-pip -y
+pip install --upgrade pip numpy setuptools
 apt install python3-daemon python3-paho-mqtt libmosquittopp-dev python3-pkgconfig python3-pybind11 -y
-pip3 install pybind11 pkgconfig paho-mqtt python-daemon soundfile
+pip install pybind11 pkgconfig paho-mqtt python-daemon soundfile
 
 harkList=("hark-base" "libhark-netapi" "libharkio3" "hark-core" "harkmw" "hark-linux" "hark-gtkplot" "harktool5")
 optsList=("" "" "" "denable=OFF" "py" "denable=OFF" "" "")
